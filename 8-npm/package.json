@@ -4,12 +4,16 @@
     "description": "",
     "main": "app.js",
     "scripts": {
-        "start": "node app.js",
+        "start": "nodemon app.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "Fahmy Fauzi Alvianda",
     "license": "ISC",
     "dependencies": {
+        "chalk": "^4.1.0",
         "validator": "^13.5.2"
+    },
+    "devDependencies": {
+        "nodemon": "^3.0.1"
     }
 }
