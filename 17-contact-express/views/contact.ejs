@@ -1,0 +1,41 @@
+<h1>Daftar Mahasiswa</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nama</th>
+            <th scope="col">No HP</th>
+            <th scope="col">Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% if (contacts.length === 0) { %>
+            <tr>
+                <td colspan="4">
+                    <div class="alert alert-danger" role="alert">
+                        Data Tidak Ada <br />
+                        <a href="#" class="alert-link">&laquo; Kembali Ke Home</a>
+                    </div>
+                </td>
+            </tr>
+            <% } %>
+                <% contacts.forEach((contact,i) => { i++ %>
+
+                    <tr>
+                        <th scope="row">
+                            <%= i++ %>
+                        </th>
+                        <td>
+                            <%= contact.nama %>
+                        </td>
+                        <td>
+                            <%= contact.noHp %>
+                        </td>
+                        <td>
+                            <a href="/contact/<%= contact.nama  %>" class="btn btn-success badge rounded-pill">Detail</a>
+                        </td>
+                    </tr>
+                    <% }) %>
+    </tbody>
+</table>
