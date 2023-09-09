@@ -1,0 +1,21 @@
+<!-- jika contact tidak ada -->
+<% if (!contact) { %>
+<div class="alert alert-danger" role="alert">
+  Data Tidak Ada <br />
+  <a href="/contact" class="alert-link">&laquo; Kembali Ke Daftar Kontact</a>
+</div>
+<% }else{ %>
+
+<div class="card-body">
+  <h5 class="card-title"><%= contact.nama %></h5>
+  <p class="card-text"><%= contact.noHp %></p>
+  <% if (contact.email) { %>
+  <p class="card-text"><%= contact.email %></p>
+
+  <% } %>
+  <a href="/contact/edit/<%= contact.nama %>" class="btn btn-info">Edit</a>
+  <a href="/contact/delete/<%= contact.nama %>" onclick="confirm('Apakah yakin mau dihapus?')" class="btn btn-danger">Delete</a>
+  <br />
+  <a href="/contact" class="btn btn-primary mt-2">Kembali ke Daftar Contact</a>
+</div>
+<% } %>
